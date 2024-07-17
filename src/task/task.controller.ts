@@ -7,6 +7,7 @@ import {
   Param,
   Delete,
   UseGuards,
+  Query,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { TaskService } from './task.service';
@@ -27,6 +28,19 @@ export class TaskController {
   @Get()
   findAll() {
     return this.taskService.findAll();
+  }
+
+  @Get('/pagination')
+  async findAllPagiNation(
+    @Query('page') page = 1,
+    @Query('limit') limit = 5,
+    @Query('filter') filter?: string,
+  ) {
+    return this.taskService.findAllPagination(
+      Number(page),
+      Number(limit),
+      filter,
+    );
   }
 
   @Get('/stats')
