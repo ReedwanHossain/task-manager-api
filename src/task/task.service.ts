@@ -11,7 +11,6 @@ export class TaskService {
 
   async getStats() {
     const totalTasks = await this.findAll();
-    console.log(totalTasks);
     const todo = totalTasks.filter((task) => task.status === 'todo').length;
     const ongoing = totalTasks.filter(
       (task) => task.status === 'ongoing',
