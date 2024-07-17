@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   app:
     build: .
@@ -15,7 +14,7 @@ services:
     ports:
       - '27017:27017'
     volumes:
-      - mongo-tasks-data:/data/db
+      - mongo-data:/data/db
 
 volumes:
-  mongo-tasks-data:
+  mongo-data:
