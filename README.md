@@ -24,50 +24,72 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+# Text Processor Application
 
-## Installation
+This repository contains the backend API for a Task Manager Application. Follow the instructions below to set up and run the application locally using Docker.
 
-```bash
-$ npm install
-```
+## Prerequisites
 
-## Running the app
+- Docker version 24.0.7
+- Docker Compose version 2.27.1
 
-```bash
-# development
-$ npm run start
+### Backend Setup (task-manager-api)
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
+1. Clone the (this) backend repository:
 
 ```bash
-# unit tests
-$ npm run test
 
-# e2e tests
-$ npm run test:e2e
+  git clone https://github.com/ReedwanHossain/task-manager-api.git
+  cd task-manager-api
 
-# test coverage
-$ npm run test:cov
 ```
 
-## Support
+2. Create .env based on .env.example:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+  touch .env
+  cp .env.example .env
 
-## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```
+
+3. Run Docker Compose to build and start the backend services:
+
+   ```bash
+   docker compose up -d --build
+   ```
+
+4. Open another terminal tab or window. Clone the frontend repository::
+
+   ```bash
+
+   git clone https://github.com/ReedwanHossain/task-manager-client.git
+   cd task-manager-client
+
+   ```
+
+5. Run Docker Compose to build and start the frontend app:
+
+   ```bash
+   docker compose up -d --build
+   ```
+
+6. Access the application
+
+   ```bash
+   http://localhost:4200
+   ```
+
+7. Access the API Docs
+
+   ```bash
+   http://localhost:3000/docs
+   ```
 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+```
+
+```
